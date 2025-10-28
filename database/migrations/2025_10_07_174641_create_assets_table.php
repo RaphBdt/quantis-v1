@@ -14,9 +14,9 @@ return new class extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['cash', 'real_estate', 'stocks', 'cryptocurrency', 'other']);
+            $table->string('type');
             $table->decimal('net_worth', 19)->default(0);
-            $table->decimal('yield', 19)->default(0);
+            $table->decimal('yield', 5)->default(0);
             $table->decimal('monthly_investment', 19)->default(0);
             $table->decimal('monthly_rent', 19)->default(0);
             $table->foreignIdFor(Scenario::class)->constrained()->cascadeOnDelete();
