@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('scenario', ScenarioController::class);
+Route::resource('scenarios', ScenarioController::class);
