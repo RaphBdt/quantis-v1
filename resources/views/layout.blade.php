@@ -8,6 +8,12 @@
 </head>
 <body class="bg-gray-900">
     <div class="min-h-full">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+            <div class="justify-start lg:flex lg:flex-1 lg:justify-end">
+                <a href="#" class="text-sm/6 font-semibold text-white">Log out</a>
+            </div>
+        </nav>
+
         <div class="py-10">
             <header>
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
