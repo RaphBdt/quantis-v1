@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('scenarios', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description')->nullable();
+            $table->string('description')->nullable();
             $table->boolean('favorite')->default(false);
             $table->timestamps();
         });
