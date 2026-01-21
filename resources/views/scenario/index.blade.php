@@ -3,7 +3,7 @@
 @section('title', 'Scenarios')
 
 @section('header-action')
-    <a href="{{ route('scenarios.create') }}" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Add a scenario</a>
+    @include('shared.button', ['link' => route('scenarios.create'), 'text' => 'Add a scenario'])
 @endsection
 
 @section('content')
