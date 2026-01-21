@@ -18,7 +18,9 @@ class ScenarioController extends Controller
 
     public function create()
     {
-        //
+        return view('scenario.form', [
+            'scenario' => new Scenario(),
+        ]);
     }
 
     public function store(Request $request)
