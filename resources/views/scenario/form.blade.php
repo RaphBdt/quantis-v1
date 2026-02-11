@@ -3,7 +3,7 @@
 @section('title', $scenario->exists ? 'Edit a scenario' : 'Create a scenario')
 
 @section('content')
-    <form action="{{ route($scenario->exists ? 'scenarios.update' : 'scenarios.store', $scenario) }}">
+    <form action="{{ route($scenario->exists ? 'scenarios.update' : 'scenarios.store', $scenario) }}" method="post">
         @csrf
         @method($scenario->exists ? 'put' : 'post')
 
@@ -13,9 +13,9 @@
 
         <div>
             @if($scenario->exists)
-                @include('shared.button', ['link' => route('scenarios.create'), 'text' => 'Edit', 'type' => 'button'])
+                @include('shared.button', ['text' => 'Edit', 'type' => 'button'])
             @else
-                @include('shared.button', ['link' => route('scenarios.create'), 'text' => 'Create', 'type' => 'button'])
+                @include('shared.button', ['text' => 'Create', 'type' => 'button'])
             @endif
         </div>
     </form>

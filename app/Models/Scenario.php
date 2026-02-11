@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Scenario extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+        'description',
+        'favorite',
+    ];
 }
