@@ -11,7 +11,7 @@ class ScenarioController extends Controller
     public function index()
     {
         return view('scenario.index', [
-            'scenarios' => Scenario::orderBy('favorite')
+            'scenarios' => Scenario::orderBy('favorite', 'desc')
                 ->orderBy('created_at', 'desc')
                 ->paginate(12),
         ]);
@@ -27,7 +27,8 @@ class ScenarioController extends Controller
     public function store(ScenarioFormRequest $request)
     {
         Scenario::create($request->validated());
-        return to_route('scenarios.index')->with('success', 'The scenario has been created');
+        
+        return to_route('scenarios.index')->with('success', 'The scenario was successfully created');
     }
 
     public function show(string $id)
