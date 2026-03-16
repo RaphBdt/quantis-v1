@@ -9,8 +9,8 @@
 <body class="bg-gray-900">
     <div class="min-h-full">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-            <div class="justify-start lg:flex lg:flex-1 lg:justify-end">
-                <a href="#" class="text-sm/6 font-semibold text-white">Log out</a>
+            <div class="lg:flex lg:flex-1 justify-start ">
+                <a href="{{ route('home') }}" class="text-sm/6 font-semibold text-white">Quantis v1</a>
             </div>
         </nav>
 
