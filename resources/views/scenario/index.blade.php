@@ -45,5 +45,7 @@
         @endforeach
     </ul>
 
-    {{ $scenarios->links() }}
+    <div class="my-8">
+        {{ $scenarios->links() }}
+    </div>
 @endsection
