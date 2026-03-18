@@ -24,6 +24,8 @@ class ScenarioFormRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:3', 'max:255'],
             'description' => ['nullable', 'string', 'max:255'],
+            'start_year' => ['required', 'integer', 'min:1900', 'max:2100'],
+            'end_year' => ['required', 'integer', 'min:1900', 'max:2100', 'gte:start_year'],
             'favorite' => ['nullable', 'boolean'],
         ];
     }

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
+            $table->unsignedSmallInteger('start_year');
+            $table->unsignedSmallInteger('end_year');
             $table->boolean('favorite')->default(false);
             $table->timestamps();
         });
