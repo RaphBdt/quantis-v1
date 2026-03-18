@@ -15,8 +15,12 @@
         </nav>
 
         <div class="py-10">
-            <header>
-                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between lg:items-center">
+            <header class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                @if(session('success'))
+                    @include('shared.alert', ['message' => session('success')])
+                @endif
+
+                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
                     <h1 class="text-3xl font-bold tracking-tight text-white">@yield('title')</h1>
                     <div class="mt-4 lg:mt-0">
                         @yield('header-action')
