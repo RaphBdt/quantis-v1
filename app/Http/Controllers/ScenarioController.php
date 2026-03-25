@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ScenarioFormRequest;
 use App\Models\Scenario;
-use Illuminate\Http\Request;
 
 class ScenarioController extends Controller
 {
@@ -36,14 +35,17 @@ class ScenarioController extends Controller
         //
     }
 
-    public function edit(string $id)
+    public function edit(Scenario $scenario)
     {
-        //
+        return view('scenario.form', [
+            'scenario' => $scenario,
+        ]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(ScenarioFormRequest $request, Scenario $scenario)
     {
-        //
+        $scenario->update($request->validated());
+        return to_route('scenarios.index')->with('success', 'The scenario was successfully updated');
     }
 
     public function destroy(Scenario $scenario)
