@@ -46,8 +46,9 @@ class ScenarioController extends Controller
         //
     }
 
-    public function destroy(string $id)
+    public function destroy(Scenario $scenario)
     {
-        //
+        $scenario->delete();
+        return to_route('scenarios.index')->with('success', 'The scenario was successfully deleted');
     }
 }
