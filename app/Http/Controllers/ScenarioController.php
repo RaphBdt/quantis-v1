@@ -30,9 +30,11 @@ class ScenarioController extends Controller
         return to_route('scenarios.index')->with('success', 'The scenario was successfully created');
     }
 
-    public function show(string $id)
+    public function show(Scenario $scenario)
     {
-        //
+        return view('scenario.show', [
+            'scenario' => $scenario,
+        ]);
     }
 
     public function edit(Scenario $scenario)
