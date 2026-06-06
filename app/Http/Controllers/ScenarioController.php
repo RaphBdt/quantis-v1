@@ -47,12 +47,14 @@ class ScenarioController extends Controller
     public function update(ScenarioFormRequest $request, Scenario $scenario)
     {
         $scenario->update($request->validated());
+
         return to_route('scenarios.index')->with('success', 'The scenario was successfully updated');
     }
 
     public function destroy(Scenario $scenario)
     {
         $scenario->delete();
+        
         return to_route('scenarios.index')->with('success', 'The scenario was successfully deleted');
     }
 }
