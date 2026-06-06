@@ -24,6 +24,7 @@ class AssetFormRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => ['required', 'string', 'min:2', 'max:255'],
             'type' => ['required', Rule::enum(AssetType::class)],
             'net_worth' => ['required', 'numeric', 'min:0'],
             'yield' => ['required', 'numeric', 'min:-100', 'max:100'],
