@@ -8,6 +8,9 @@ Route::get('/', [ScenarioController::class, 'index'])->name('home');
 
 Route::resource('scenarios', ScenarioController::class);
 
-Route::prefix('scenarios/{scenario}/assets')->controller(AssetController::class)->name('assets.')->group(function() {
-    Route::get('/create', 'create')->name('create');
+Route::prefix('scenarios/{scenario}/assets/')->controller(AssetController::class)->name('assets.')->group(function() {
+    Route::get('create', 'create')->name('create');
+    Route::post('', 'store')->name('store');
+    Route::get('{asset}/edit', 'edit')->name('edit');
+    Route::put('{asset}', 'update')->name('update');
 });
