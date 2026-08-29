@@ -12,6 +12,6 @@ class Asset extends Model
         'net_worth',
         'yield',
         'monthly_investment',
-        'monthly_rent',
+        'dividends',
     ];
 }

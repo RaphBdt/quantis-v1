@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('net_worth', 19);
             $table->decimal('yield', 5);
             $table->decimal('monthly_investment', 19);
-            $table->decimal('monthly_rent', 19);
+            $table->decimal('dividends', 19)->default(0);
             $table->foreignIdFor(Scenario::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
