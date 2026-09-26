@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="my-8">
-        @if (empty($scenario->assets))
+        @if ($scenario->assets->isEmpty())
             <p class="text-center text-white">No assets added for this scenario.</p>
             <div class="flex justify-center my-4">
                 @include('shared.button', ['link' => route('assets.create', ['scenario' => $scenario]), 'text' => 'Add an asset'])

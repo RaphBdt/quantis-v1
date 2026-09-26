@@ -18,7 +18,7 @@ class AssetController extends Controller
 
     public function store(AssetFormRequest $request, Scenario $scenario)
     {
-        Asset::create($request->validated());
+        $scenario->assets()->create($request->validated());
 
         return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The asset was successfully created');
     }
