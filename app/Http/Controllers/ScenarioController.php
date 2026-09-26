@@ -34,6 +34,7 @@ class ScenarioController extends Controller
     {
         return view('scenario.show', [
             'scenario' => $scenario,
+            'assets' => $scenario->assets()->orderBy('type')->orderBy('created_at')->get(),
         ]);
     }
 
