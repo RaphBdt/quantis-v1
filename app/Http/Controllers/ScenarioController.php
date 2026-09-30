@@ -49,7 +49,7 @@ class ScenarioController extends Controller
     {
         $scenario->update($request->validated());
 
-        return to_route('scenarios.index')->with('success', 'The scenario was successfully updated');
+        return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The scenario was successfully updated');
     }
 
     public function destroy(Scenario $scenario)
