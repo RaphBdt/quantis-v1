@@ -18,8 +18,12 @@ class ScenarioController extends Controller
 
     public function create()
     {
+        $scenario = new Scenario();
+        $scenario->start_year = (int) date('Y');
+        $scenario->end_year = (int) date('Y') + 10;
+        
         return view('scenario.form', [
-            'scenario' => new Scenario(),
+            'scenario' => $scenario,
         ]);
     }
 
