@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+    <p class="text-white"> {{ $scenario->description }}</p>
     <div class="my-8">
         @if ($scenario->assets->isEmpty())
             <p class="text-center text-white">No assets added for this scenario.</p>
