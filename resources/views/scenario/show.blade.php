@@ -48,7 +48,11 @@
                                             <a href="{{ route('assets.edit', ['scenario' => $scenario, 'asset' => $asset]) }}" class="text-indigo-400 hover:text-indigo-300">Edit</a>
                                         </td>
                                         <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                                            <a href="#" class="text-indigo-400 hover:text-indigo-300">Delete</a>
+                                            <form action="{{ route('assets.delete', ['scenario' => $scenario, 'asset' => $asset]) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="text-indigo-400 hover:text-indigo-300 bg-transparent border-none cursor-pointer p-0">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

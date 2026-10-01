@@ -37,4 +37,11 @@ class AssetController extends Controller
 
         return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The asset was successfully updated');
     }
+
+    public function destroy(Scenario $scenario, Asset $asset)
+    {
+        $asset->delete();
+
+        return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The asset was successfully deleted');
+    }
 }

@@ -13,4 +13,5 @@ Route::prefix('scenarios/{scenario}/assets/')->controller(AssetController::class
     Route::post('', 'store')->name('store');
     Route::get('{asset}/edit', 'edit')->name('edit');
     Route::put('{asset}', 'update')->name('update');
+    Route::delete('{asset}', 'destroy')->name('delete');
 });
