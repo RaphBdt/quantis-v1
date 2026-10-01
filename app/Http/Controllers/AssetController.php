@@ -23,7 +23,7 @@ class AssetController extends Controller
         return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The asset was successfully created');
     }
 
-    public function edit(Asset $asset, Scenario $scenario)
+    public function edit(Scenario $scenario, Asset $asset)
     {
         return view('asset.form', [
             'scenario' => $scenario,
@@ -31,10 +31,10 @@ class AssetController extends Controller
         ]);
     }
 
-    public function update(AssetFormRequest $request, Asset $asset)
+    public function update(AssetFormRequest $request, Scenario $scenario, Asset $asset)
     {
         $asset->update($request->validated());
 
-        return to_route('scenarios.show', ['scenario' => $asset])->with('success', 'The asset was successfully updated');
+        return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The asset was successfully updated');
     }
 }

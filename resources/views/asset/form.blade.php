@@ -3,9 +3,9 @@
 @section('title', $asset->exist ? 'Edit asset ' . $asset->name . ' for scenario ' . $scenario->name : 'New asset for scenario ' . $scenario->name)
 
 @section('content')
-    <form action="{{ route($asset->exist ? 'assets.update' : 'assets.store', [$scenario, $asset]) }}" method="post">
+    <form action="{{ route($asset->exists ? 'assets.update' : 'assets.store', [$scenario, $asset]) }}" method="post">
         @csrf
-        @method($asset->exist ? 'put' : 'post')
+        @method($asset->exists ? 'put' : 'post')
         <input type="hidden" name="scenario_id" value="{{ $scenario->id }}">
 
         <div class="flex flex-col sm:flex-row gap-4">
@@ -15,9 +15,9 @@
                 'label' => 'Type of asset class',
                 'class' => 'mb-8 sm:w-1/3',
                 'options' => \App\Enums\AssetType::options(),
-                'selected' => $asset->type?->value,
+                'selected' => $asset->type,
             ])
-            @include('shared.input', ['name' => 'net_worth', 'label' => 'Net worth', 'type' => '', 'class' => 'sm:w-1/3 mb-8'])
+            @include('shared.input', ['name' => 'net_worth', 'label' => 'Net worth', 'type' => '', 'class' => 'sm:w-1/3 mb-8', 'value' => $asset->net_worth])
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4">

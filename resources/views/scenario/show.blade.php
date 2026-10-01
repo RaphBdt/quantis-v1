@@ -45,7 +45,7 @@
                                         <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">{{ number_format($asset->monthly_investment, 2, ',', ' ') }} €</td>
                                         <td class="px-2 py-2 text-sm whitespace-nowrap text-gray-400">@if(is_null($asset->dividends)) x @else {{ number_format($asset->dividends, 2, ',', ' ') }} €@endif</td>
                                         <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
-                                            <a href="#" class="text-indigo-400 hover:text-indigo-300">Edit</a>
+                                            <a href="{{ route('assets.edit', ['scenario' => $scenario, 'asset' => $asset]) }}" class="text-indigo-400 hover:text-indigo-300">Edit</a>
                                         </td>
                                         <td class="py-2 pr-4 pl-3 text-right text-sm font-medium whitespace-nowrap sm:pr-0">
                                             <a href="#" class="text-indigo-400 hover:text-indigo-300">Delete</a>
