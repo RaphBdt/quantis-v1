@@ -18,8 +18,12 @@ class ScenarioController extends Controller
 
     public function create()
     {
+        $scenario = new Scenario();
+        $scenario->start_year = (int) date('Y');
+        $scenario->end_year = (int) date('Y') + 10;
+        
         return view('scenario.form', [
-            'scenario' => new Scenario(),
+            'scenario' => $scenario,
         ]);
     }
 
@@ -34,6 +38,7 @@ class ScenarioController extends Controller
     {
         return view('scenario.show', [
             'scenario' => $scenario,
+            'assets' => $scenario->assets()->orderBy('type')->orderBy('created_at')->get(),
         ]);
     }
 
@@ -48,7 +53,7 @@ class ScenarioController extends Controller
     {
         $scenario->update($request->validated());
 
-        return to_route('scenarios.index')->with('success', 'The scenario was successfully updated');
+        return to_route('scenarios.show', ['scenario' => $scenario])->with('success', 'The scenario was successfully updated');
     }
 
     public function destroy(Scenario $scenario)

@@ -29,7 +29,7 @@ class AssetFormRequest extends FormRequest
             'net_worth' => ['required', 'numeric', 'min:0'],
             'yield' => ['required', 'numeric', 'min:-100', 'max:100'],
             'monthly_investment' => ['nullable', 'numeric', 'min:0'],
-            'monthly_rent' => ['nullable', 'numeric', 'min:0'],
+            'dividends' => ['nullable', 'numeric', 'min:0'],
             'scenario_id' => ['required', 'exists:scenarios,id'],
         ];
     }
